@@ -1,0 +1,32 @@
+---
+title: "Published Test-then-Vaccinate ROI Analyses"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{published-analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+We computed the analysis in [this publication](https://arxiv.org/abs/1904.00214) in a series of steps, each dependent on the next, linked together via the traditional development tool [`gnu make`](https://www.gnu.org/software/make/manual/html_node/index.html).  We fit some example serological data sets (Morrison 2010 and L'Azou 2016, both collected from published studies and available as part of this package),
+and then use those fits to simulate populations.
+
+All of the scripts mentioned in this vignette are included in the `inst/extdata` of this package, and can be located wherever your R packages are installed, or accessed via the `build.project` tool to make a skeleton, or by using `list.files(system.file("extdata/pub", package="denvax"), pattern=".R", full.names = T)` to get the paths.
+
+The skeleton includes a 'Makefile' that defines a general set of dependencies, as well as the specific steps used to generate the figures in the published manuscript.  The `simple.R` script demonstrates a simple start-to-finish analysis (using the Morrison 2010 data included in the package).
+
+In either approach, the steps are:
+
+1. develop fit(s) for local serological data (e.g., use the `fit.R` script from `build.project` in Rstudio, write your own script with the `denvax::serofit` function, or use make with the target `%-fit.json` in Makefile).
+2. use a fit to synthesize a population (e.g., `synthesize.R` script, the `denvax::synthetic.pop` function, or the target `%-lh.rds` in Makefile)
+3. use the synthetic population to estimate the lifetime outcome probabilities (e.g., `digest.R` script, the `denvax::npxa` function, or the target `%-npxa.rds` in Makefile)
+4. combine the probabilities with the desired boundaries for interventions (initial testing age and maximum number of tests) and to compute the ROI equation coefficients (`denvax::ROIcoeffs` function)
+5. finally, combine the coefficients with desired cost fraction ranges (i.e., the cost of vaccination and testing as fractions of the estimated burden of secondary infection, or $\nu$ and $\tau$ respectively), to determine the threshold region for positive ROI (`denvax::ROI` function).
+
+Within the `pub/` directory, we have another makefile and scripts which cover the specific analyses used in the publication.

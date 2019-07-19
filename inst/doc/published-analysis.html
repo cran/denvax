@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Published Test-then-Vaccinate ROI Analyses</title>
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Published Test-then-Vaccinate ROI Analyses</h1>
+
+
+
+<p>We computed the analysis in <a href="https://arxiv.org/abs/1904.00214">this publication</a> in a series of steps, each dependent on the next, linked together via the traditional development tool <a href="https://www.gnu.org/software/make/manual/html_node/index.html"><code>gnu make</code></a>. We fit some example serological data sets (Morrison 2010 and L’Azou 2016, both collected from published studies and available as part of this package), and then use those fits to simulate populations.</p>
+<p>All of the scripts mentioned in this vignette are included in the <code>inst/extdata</code> of this package, and can be located wherever your R packages are installed, or accessed via the <code>build.project</code> tool to make a skeleton, or by using <code>list.files(system.file(&quot;extdata/pub&quot;, package=&quot;denvax&quot;), pattern=&quot;.R&quot;, full.names = T)</code> to get the paths.</p>
+<p>The skeleton includes a ‘Makefile’ that defines a general set of dependencies, as well as the specific steps used to generate the figures in the published manuscript. The <code>simple.R</code> script demonstrates a simple start-to-finish analysis (using the Morrison 2010 data included in the package).</p>
+<p>In either approach, the steps are:</p>
+<ol style="list-style-type: decimal">
+<li>develop fit(s) for local serological data (e.g., use the <code>fit.R</code> script from <code>build.project</code> in Rstudio, write your own script with the <code>denvax::serofit</code> function, or use make with the target <code>%-fit.json</code> in Makefile).</li>
+<li>use a fit to synthesize a population (e.g., <code>synthesize.R</code> script, the <code>denvax::synthetic.pop</code> function, or the target <code>%-lh.rds</code> in Makefile)</li>
+<li>use the synthetic population to estimate the lifetime outcome probabilities (e.g., <code>digest.R</code> script, the <code>denvax::npxa</code> function, or the target <code>%-npxa.rds</code> in Makefile)</li>
+<li>combine the probabilities with the desired boundaries for interventions (initial testing age and maximum number of tests) and to compute the ROI equation coefficients (<code>denvax::ROIcoeffs</code> function)</li>
+<li>finally, combine the coefficients with desired cost fraction ranges (i.e., the cost of vaccination and testing as fractions of the estimated burden of secondary infection, or <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\tau\)</span> respectively), to determine the threshold region for positive ROI (<code>denvax::ROI</code> function).</li>
+</ol>
+<p>Within the <code>pub/</code> directory, we have another makefile and scripts which cover the specific analyses used in the publication.</p>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
