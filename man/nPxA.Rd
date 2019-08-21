@@ -31,7 +31,7 @@ Compute the nPx(A), C(A) proportions from a population of life histories
 }
 \details{
 computes the relevant nPx(A) and C(A): the probabilities of the various life trajectories, by age.
-  See \href{https://arxiv.org/abs/1904.00214}{<arxiv:1904.00214>}, SI section II.A (Cost Benefit Equations: Definitions)
+  See \href{https://doi.org/10.1098/rsif.2019.0234}{<doi:10.1098/rsif.2019.0234>}, SI section II.A (Cost Benefit Equations: Definitions)
 }
 \examples{
 require(denvax);

@@ -38,6 +38,18 @@ plot.dt <- reducedrois[
   log10(tau) %in% seq(-2, -1, by = .5)
 ]
 
+scale_start_age <- scale_x_continuous(
+  "Initial Age for Routine Testing",
+  breaks = 5:10,
+  expand = expand_scale(add = 0.5)
+)
+
+scale_num_tests   <- scale_y_continuous(
+  "Maximum # of Tests",
+  breaks = function(lims) seq(round(lims[1]), round(lims[2]), by = 1),
+  expand = expand_scale(add = 0.5)
+)
+
 p <- ggplot(plot.dt) + aes(
   A, L,
   fill = roi, z = roi, color = c("neg", "pos")[(roi > 0) + 1]
@@ -65,5 +77,5 @@ p <- ggplot(plot.dt) + aes(
 save_plot(
   tail(.args, 1), p,
   ncol = plot.dt[, length(unique(tau))], nrow = 1,
-  base_height = 3.5
+  base_height = 3.5, base_width = 4
 )

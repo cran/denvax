@@ -29,13 +29,13 @@ $(OUTDIR)/scan-params.rds: cross_group_range.R $(OUTDIR)/fit-morrison2010.json $
 $(OUTDIR)/scan-rois.rds: scan_rois.R $(OUTDIR)/scan-params.rds | $(OUTDIR)
 	$(R)
 
-$(OUTDIR)/fig-compare.png: fig-comparison.R $(OUTDIR)/example-rois.rds malaysia_v_peru.json | $(OUTDIR)
+$(addprefix $(OUTDIR)/fig-compare.,png pdf tiff jpg): fig-comparison.R $(addprefix $(OUTDIR)/,fig-scales.rda example-rois.rds) malaysia_v_peru.json | $(OUTDIR)
 	$(R)
 
-$(OUTDIR)/fig-scan.png: fig-scan.R $(addprefix $(OUTDIR)/,fig-scales.rda scan-rois.rds scan-params.rds) | $(OUTDIR)
+$(addprefix $(OUTDIR)/fig-scan.,png pdf tiff jpg): fig-scan.R $(addprefix $(OUTDIR)/,fig-scales.rda scan-rois.rds scan-params.rds) | $(OUTDIR)
 	$(R)
 
-$(OUTDIR)/fig-ntests.png: fig-ntests.R $(addprefix $(OUTDIR)/,fig-scales.rda scan-rois.rds scan-params.rds) | $(OUTDIR)
+$(addprefix $(OUTDIR)/fig-ntests.,png pdf tiff jpg): fig-ntests.R $(addprefix $(OUTDIR)/,fig-scales.rda scan-rois.rds scan-params.rds) | $(OUTDIR)
 	$(R)
 
 $(OUTDIR)/fig-scales.rda: fig-scales.R | $(OUTDIR)
@@ -43,7 +43,7 @@ $(OUTDIR)/fig-scales.rda: fig-scales.R | $(OUTDIR)
 
 .PHONY: manuscript
 
-manuscript: $(addprefix $(OUTDIR)/,fig-compare.png fig-scan.png fig-ntests.png fig-scales.rda)
+manuscript: $(addprefix $(OUTDIR)/,fig-compare.pdf fig-scan.pdf fig-ntests.pdf)
 
 cleanmanuscript:
 	cd $(OUTDIR); rm -f *.rds *.json *.rda

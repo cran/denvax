@@ -1,7 +1,7 @@
 #' denvax: Simple Dengue Test and Vaccinate Cost Thresholds
 #'
 #' Provides the mathematical model described by "Serostatus Testing & Dengue Vaccine Cost-Benefit Thresholds"
-#' in \href{https://arxiv.org/abs/1904.00214}{<arXiv:1904.00214>}.  Using the functions in the package,
+#' in \href{https://doi.org/10.1098/rsif.2019.0234}{<doi:10.1098/rsif.2019.0234>}.  Using the functions in the package,
 #' that analysis can be repeated using sample life histories, either synthesized from local seroprevalence data
 #' using other functions in this package (as in the manuscript) or from some other source.
 #' The package provides a vignette which walks through the analysis in the publication, as well as a function
@@ -242,7 +242,7 @@ crunch <- function(
 #' @param lifehistory, a matrix with rows (sample individuals) and columns (outcome in year of life); see \link{synthetic.pop} return value
 #'
 #' @details computes the relevant nPx(A) and C(A): the probabilities of the various life trajectories, by age.
-#'   See \href{https://arxiv.org/abs/1904.00214}{<arxiv:1904.00214>}, SI section II.A (Cost Benefit Equations: Definitions)
+#'   See \href{https://doi.org/10.1098/rsif.2019.0234}{<doi:10.1098/rsif.2019.0234>}, SI section II.A (Cost Benefit Equations: Definitions)
 #'
 #' @return a \code{\link[base]{data.frame}} (\code{\link[data.table]{data.table}}, if available) with columns
 #' \describe{

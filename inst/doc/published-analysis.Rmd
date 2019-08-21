@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-We computed the analysis in [this publication](https://arxiv.org/abs/1904.00214) in a series of steps, each dependent on the next, linked together via the traditional development tool [`gnu make`](https://www.gnu.org/software/make/manual/html_node/index.html).  We fit some example serological data sets (Morrison 2010 and L'Azou 2016, both collected from published studies and available as part of this package),
+We computed the analysis in [this publication](https://doi.org/10.1098/rsif.2019.0234) in a series of steps, each dependent on the next, linked together via the traditional development tool [`gnu make`](https://www.gnu.org/software/make/manual/html_node/index.html).  We fit some example serological data sets (Morrison 2010 and L'Azou 2016, both collected from published studies and available as part of this package),
 and then use those fits to simulate populations.
 
 All of the scripts mentioned in this vignette are included in the `inst/extdata` of this package, and can be located wherever your R packages are installed, or accessed via the `build.project` tool to make a skeleton, or by using `list.files(system.file("extdata/pub", package="denvax"), pattern=".R", full.names = T)` to get the paths.
