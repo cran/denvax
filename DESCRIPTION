@@ -1,7 +1,7 @@
 Package: denvax
 Type: Package
 Title: Simple Dengue Test and Vaccinate Cost Thresholds
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Carl A. B.", "Pearson", email="carl.pearson@lshtm.ac.uk", role = c("aut","cre"), comment = c(ORCID="0000-0003-0701-7860")),
     person("Kaja M.", "Abbas", role = c("aut"), comment = c(ORCID="0000-0003-0563-1576")),
@@ -26,7 +26,7 @@ VignetteBuilder: knitr
 URL: https://gitlab.com/cabp_LSHTM/denvax
 BugReports: https://gitlab.com/cabp_LSHTM/denvax/issues
 NeedsCompilation: no
-Packaged: 2019-08-21 11:36:28 UTC; carl
+Packaged: 2019-11-30 20:31:28 UTC; carlpearson
 Author: Carl A. B. Pearson [aut, cre] (<https://orcid.org/0000-0003-0701-7860>),
   Kaja M. Abbas [aut] (<https://orcid.org/0000-0003-0563-1576>),
   Samuel Clifford [aut] (<https://orcid.org/0000-0002-3774-3882>),
@@ -34,4 +34,4 @@ Author: Carl A. B. Pearson [aut, cre] (<https://orcid.org/0000-0003-0701-7860>),
   Thomas J. Hladish [aut] (<https://orcid.org/0000-0003-1819-6235>)
 Maintainer: Carl A. B. Pearson <carl.pearson@lshtm.ac.uk>
 Repository: CRAN
-Date/Publication: 2019-08-21 13:10:02 UTC
+Date/Publication: 2019-12-01 19:00:02 UTC

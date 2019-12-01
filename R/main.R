@@ -26,15 +26,15 @@ NULL
 ####################################################################
 # functions that swap behaviors based on what packages are available
 
-constructor <- {
+constructor <- function(...) {
   if (requireNamespace("data.table", quietly = TRUE)) {
-    data.table::data.table
-  } else data.frame
+    data.table::data.table(...)
+  } else data.frame(...)
 }
 
-reductor <- { if (requireNamespace("data.table", quietly = TRUE)) {
-  data.table::rbindlist
-} else function(x) Reduce(rbind, x) }
+reductor <- function(...) { if (requireNamespace("data.table", quietly = TRUE)) {
+  data.table::rbindlist(...)
+} else Reduce(rbind, ...) }
 
 # TODO: parallel apply for prune.exposure? Rcpp?
 
